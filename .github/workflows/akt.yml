@@ -1,0 +1,50 @@
+name: Demo1
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+
+
+jobs:
+  job1_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+
+
+  job2_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world in windows.
+
+ 
+
+  job3_python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+      - name: Run a one-line script
+        run: python akt.py
+
+
+
+  job4_python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+      - name: Run a one-line script
+        run: python akt2.py
+        working-directory: ./scripts
