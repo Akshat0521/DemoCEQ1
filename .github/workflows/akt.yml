@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
       - name: Run a one-line script
-        run: python akt.py
+        run: python Demo.py
 
 
 
@@ -47,4 +47,4 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Run a one-line script
         run: python akt2.py
-        working-directory: ./scripts
+        working-directory: ./Scripts
