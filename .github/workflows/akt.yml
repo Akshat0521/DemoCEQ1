@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: SSH into EC2 instance
-        run: |
-          chmod 400 AkshatUbuntuKeyAWS27.pem
-          ssh -i "AkshatUbuntuKeyAWS27.pem" ubuntu@ec2-100-25-36-218.compute-1.amazonaws.com
+      # - name: SSH into EC2 instance
+      #   run: |
+      #     chmod 400 AkshatUbuntuKeyAWS27.pem
+      #     ssh -i "AkshatUbuntuKeyAWS27.pem" ubuntu@ec2-100-25-36-218.compute-1.amazonaws.com
       - name: Root access and Update Sudo 
         run: |
           sudo -i
