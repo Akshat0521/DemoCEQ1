@@ -8,16 +8,27 @@ on:
 
 jobs:
   job1_ubuntu:
-    runs-on: self-hosted
+    runs-on: Ubuntu-Latest
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: SSH into EC2 instance
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          chmod 400 AkshatUbuntuKeyAWS27.pem
+          ssh -i "AkshatUbuntuKeyAWS27.pem" ubuntu@ec2-100-25-36-218.compute-1.amazonaws.com
+      - name: Root access and Update Sudo 
+        run: |
+          sudo -i
+          sudo apt-get update
+      - name: Install Apache Server
+        run: |
+          sudo apt-get install apache2
+          systemctl apache start
+           
 
+
+          
 
 
   # job2_windows:
