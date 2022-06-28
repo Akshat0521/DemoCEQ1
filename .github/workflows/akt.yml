@@ -23,8 +23,9 @@ jobs:
           sudo apt-get update
       - name: Install Apache Server
         run: |
-          sudo apt-get install apache2
-          systemctl apache start
+          sudo apt-get remove apache2
+          ls
+          
            
 
 
