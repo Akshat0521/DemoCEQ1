@@ -8,7 +8,7 @@ on:
 
 jobs:
   job1_ubuntu:
-    runs-on: Ubuntu-Latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
