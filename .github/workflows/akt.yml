@@ -24,7 +24,7 @@ jobs:
       - name: Install Apache Server
         run: |
           sudo apt-get remove apache2
-          ls
+          Y
           
            
 
